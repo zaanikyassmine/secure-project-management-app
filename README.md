@@ -1,6 +1,6 @@
 # 🏢 Management Project
 
-Un système de gestion de projets et tâches sécuirsé: jwt, gestion de roles, helmet, validation.
+Un système de gestion de projets et tâches sécuirsé: jwt, gestion de roles, helmet, validation, bcrypt, rate limite.
 
 
 

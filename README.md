@@ -115,20 +115,18 @@ management-project/
 ## 🔒 **Sécurité**
 
 L'application inclut :
-- 🛡️ **Helmet.js** - Protection des en-têtes
-- 🚦 **Rate limiting** - Protection contre les attaques
-- 🔐 **JWT** - Authentification sécurisée
-- 🔑 **bcrypt** - Hachage des mots de passe
-- ✅ **Validation** - Validation des données
+- **Helmet.js** - Protection des en-têtes
+- **Rate limiting** - Protection contre les attaques
+- **JWT** - Authentification sécurisée
+- **bcrypt** - Hachage des mots de passe
+- **Validation** - Validation des données
 
 ---
 
-## 🆘 **Besoin d'aide ?**
 
-1. **Documentation complète** : Voir `README-DOCKER.md`
-2. **Problèmes de sécurité** : Voir `SECURITY-REPORT.md`
-3. **API Endpoints** : Voir la section API dans `README-DOCKER.md`
+
+1. Documentation complète : Voir `README-DOCKER.md`
 
 ---
 
-**🎉 C'est tout ! L'application devrait fonctionner immédiatement avec Docker.**
+

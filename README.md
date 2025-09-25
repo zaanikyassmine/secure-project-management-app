@@ -1,11 +1,11 @@
 # 🏢 Management Project
 
-Un système de gestion de projets et tâches avec authentification.
+Un système de gestion de projets et tâches sécuirsé: jwt, gestion de roles, helmet, validation.
 
-## 🚀 **Démarrage Ultra-Rapide (2 minutes)**
+
 
 ### 1. **Prérequis** (Installation unique)
-- **Docker Desktop** : [Télécharger ici](https://www.docker.com/products/docker-desktop/)
+- **Docker Desktop** :
 - Démarrer Docker Desktop après installation
 
 ### 2. **Lancer l'application**

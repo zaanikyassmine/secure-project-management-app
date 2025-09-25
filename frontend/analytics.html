@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphiques - Management Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/analytics.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand">Management<span>Project</span></div>
+      <nav>
+        <a class="nav-btn" href="/dashboard.html">
+          <span class="nav-icon">🏠</span>
+          Dashboard
+        </a>
+        <a class="nav-btn" href="/projects.html">
+          <span class="nav-icon">📁</span>
+          Projets
+        </a>
+        <a class="nav-btn" href="/tasks.html">
+          <span class="nav-icon">📝</span>
+          Tâches
+        </a>
+        <a class="nav-btn admin-only" href="/users.html" id="users-nav" style="display: none;">
+          <span class="nav-icon">👥</span>
+          Utilisateurs
+        </a>
+        <a class="nav-btn active" href="/analytics.html">
+          <span class="nav-icon">📊</span>
+          Graphiques
+        </a>
+      </nav>
+      <div class="auth">
+        <div id="user-info"></div>
+        <button id="logout-btn" class="secondary">Se déconnecter</button>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="section-header">
+        <h2>📊 Graphiques et Analyses</h2>
+        <button id="refresh-charts" class="secondary">🔄 Actualiser</button>
+      </div>
+      
+      <!-- Statistiques rapides -->
+      <div class="stats-overview">
+        <div class="stat-card">
+          <div class="stat-icon">📁</div>
+          <div class="stat-content">
+            <span class="stat-number" id="total-projects">0</span>
+            <span class="stat-label">Projets</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-content">
+            <span class="stat-number" id="completed-projects">0</span>
+            <span class="stat-label">Terminés</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📝</div>
+          <div class="stat-content">
+            <span class="stat-number" id="total-tasks">0</span>
+            <span class="stat-label">Tâches</span>
+          </div>
+        </div>
+        <div class="stat-card" id="users-stat" style="display: none;">
+          <div class="stat-icon">👥</div>
+          <div class="stat-content">
+            <span class="stat-number" id="total-users">0</span>
+            <span class="stat-label">Utilisateurs</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Graphiques -->
+      <div class="charts-grid">
+        <!-- Statut des projets -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3>📈 Statut des Projets</h3>
+          </div>
+          <div class="chart-content">
+            <canvas id="projects-chart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Statut des tâches -->
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3>📋 Répartition des Tâches</h3>
+          </div>
+          <div class="chart-content">
+            <canvas id="tasks-chart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Activité utilisateurs (admin seulement) -->
+        <div class="chart-container" id="user-activity-chart" style="display: none;">
+          <div class="chart-header">
+            <h3>👥 Activité des Utilisateurs</h3>
+          </div>
+          <div class="chart-content">
+            <canvas id="user-activity-canvas"></canvas>
+          </div>
+        </div>
+        
+        <!-- Activité par projet (utilisateur normal) -->
+        <div class="chart-container" id="project-activity-chart" style="display: none;">
+          <div class="chart-header">
+            <h3>📊 Activité par Projet</h3>
+          </div>
+          <div class="chart-content">
+            <canvas id="project-activity-canvas"></canvas>
+          </div>
+        </div>
+        
+        <!-- Progression mensuelle -->
+        <div class="chart-container full-width">
+          <div class="chart-header">
+            <h3>📅 Progression Mensuelle</h3>
+          </div>
+          <div class="chart-content">
+            <canvas id="monthly-progress-chart"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Légendes personnalisées -->
+      <div class="legends">
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #10b981;"></span>
+          <span>Terminé / Réalisé</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #f59e0b;"></span>
+          <span>En cours</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #ef4444;"></span>
+          <span>À faire / Pas de tâches</span>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

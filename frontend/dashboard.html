@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Management Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/dashboard.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand">Management<span>Project</span></div>
+      <nav>
+        <a class="nav-btn active" href="/dashboard.html">
+          <span class="nav-icon">🏠</span>
+          Dashboard
+        </a>
+        <a class="nav-btn" href="/projects.html">
+          <span class="nav-icon">📁</span>
+          Projets
+        </a>
+        <a class="nav-btn" href="/tasks.html">
+          <span class="nav-icon">📝</span>
+          Tâches
+        </a>
+        <a class="nav-btn admin-only" href="/users.html" style="display: none;">
+          <span class="nav-icon">👥</span>
+          Utilisateurs
+        </a>
+        <a class="nav-btn" href="/analytics.html">
+          <span class="nav-icon">📊</span>
+          Graphiques
+        </a>
+      </nav>
+      <div class="auth">
+        <div id="user-info"></div>
+        <button id="logout-btn" class="secondary">Se déconnecter</button>
+      </div>
+    </aside>
+    <main class="content">
+      <section class="card">
+        <h1>Bienvenue 👋</h1>
+        <p>Vue d'ensemble de vos projets et tâches.</p>
+        <div class="grid">
+          <div class="stat card"><div class="label">Projets</div><div id="stat-projects" class="value">0</div></div>
+          <div class="stat card"><div class="label">Tâches</div><div id="stat-tasks" class="value">0</div></div>
+          <div class="stat card"><div class="label">À faire</div><div id="stat-todo" class="value">0</div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets - Management Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/projects.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand">Management<span>Project</span></div>
+      <nav>
+        <a class="nav-btn" href="/dashboard.html">
+          <span class="nav-icon">🏠</span>
+          Dashboard
+        </a>
+        <a class="nav-btn active" href="/projects.html">
+          <span class="nav-icon">📁</span>
+          Projets
+        </a>
+        <a class="nav-btn" href="/tasks.html">
+          <span class="nav-icon">📝</span>
+          Tâches
+        </a>
+        <a class="nav-btn admin-only" href="/users.html" style="display: none;">
+          <span class="nav-icon">👥</span>
+          Utilisateurs
+        </a>
+        <a class="nav-btn" href="/analytics.html">
+          <span class="nav-icon">📊</span>
+          Graphiques
+        </a>
+      </nav>
+      <div class="auth">
+        <div id="user-info"></div>
+        <button id="logout-btn" class="secondary">Se déconnecter</button>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="section-header">
+        <h2>Projets</h2>
+        <button id="new-project-btn">Nouveau projet</button>
+      </div>
+      <div id="project-list" class="list"></div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h3 id="modal-title"></h3>
+        <button id="modal-close" class="icon">✕</button>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+</body>
+</html>
+
+

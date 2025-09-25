@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Management Project - Connexion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/js/auth.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand">Management<span>Project</span></div>
+      <nav>
+        <a class="nav-btn" href="/dashboard.html">
+          <span class="nav-icon">🏠</span>
+          Dashboard
+        </a>
+        <a class="nav-btn" href="/projects.html">
+          <span class="nav-icon">📁</span>
+          Projets
+        </a>
+        <a class="nav-btn" href="/tasks.html">
+          <span class="nav-icon">📝</span>
+          Tâches
+        </a>
+        <a class="nav-btn admin-only" href="/users.html" style="display: none;">
+          <span class="nav-icon">👥</span>
+          Utilisateurs
+        </a>
+        <a class="nav-btn" href="/analytics.html">
+          <span class="nav-icon">📊</span>
+          Graphiques
+        </a>
+      </nav>
+      <div class="auth">
+        <div id="user-info"></div>
+        <button id="logout-btn" class="secondary">Se déconnecter</button>
+      </div>
+    </aside>
+    <main class="content">
+      <section id="auth-section" class="card">
+        <h2>Connexion</h2>
+        <form id="login-form">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Mot de passe<input type="password" name="password" required minlength="6" /></label>
+          <button type="submit">Se connecter</button>
+        </form>
+        <div class="divider">ou</div>
+        <h3>Inscription</h3>
+        <form id="register-form">
+          <label>Nom<input type="text" name="name" required minlength="2" /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Mot de passe<input type="password" name="password" required minlength="6" /></label>
+          <button type="submit" class="secondary">Créer un compte</button>
+        </form>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <h1>Bienvenue 👋</h1>
+        <p>Gérez vos projets et tâches avec simplicité et sécurité.</p>
+        <div class="grid">
+          <div class="stat card"><div class="label">Projets</div><div id="stat-projects" class="value">0</div></div>
+          <div class="stat card"><div class="label">Tâches</div><div id="stat-tasks" class="value">0</div></div>
+          <div class="stat card"><div class="label">À faire</div><div id="stat-todo" class="value">0</div></div>
+        </div>
+      </section>
+
+      <section id="projects" class="hidden">
+        <div class="section-header">
+          <h2>Projets</h2>
+          <button id="new-project-btn">Nouveau projet</button>
+        </div>
+        <div id="project-list" class="list"></div>
+      </section>
+
+      <section id="tasks" class="hidden">
+        <div class="section-header">
+          <h2>Tâches</h2>
+          <button id="new-task-btn">Nouvelle tâche</button>
+        </div>
+        <div class="filters">
+          <label>Projet
+            <select id="task-project-filter"></select>
+          </label>
+        </div>
+        <div id="task-list" class="list"></div>
+      </section>
+    </main>
+  </div>
+  <div id="modal" class="modal hidden">
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h3 id="modal-title"></h3>
+        <button id="modal-close" class="icon">✕</button>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+</body>
+<noscript>Activez JavaScript pour utiliser l'application.</noscript>
+</html>
+
+
+

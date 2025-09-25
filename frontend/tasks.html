@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tâches - Management Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/tasks.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar">
+      <div class="brand">Management<span>Project</span></div>
+      <nav>
+        <a class="nav-btn" href="/dashboard.html">
+          <span class="nav-icon">🏠</span>
+          Dashboard
+        </a>
+        <a class="nav-btn" href="/projects.html">
+          <span class="nav-icon">📁</span>
+          Projets
+        </a>
+        <a class="nav-btn active" href="/tasks.html">
+          <span class="nav-icon">📝</span>
+          Tâches
+        </a>
+        <a class="nav-btn admin-only" href="/users.html" style="display: none;">
+          <span class="nav-icon">👥</span>
+          Utilisateurs
+        </a>
+        <a class="nav-btn" href="/analytics.html">
+          <span class="nav-icon">📊</span>
+          Graphiques
+        </a>
+      </nav>
+      <div class="auth">
+        <div id="user-info"></div>
+        <button id="logout-btn" class="secondary">Se déconnecter</button>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="section-header">
+        <h2>Tâches</h2>
+        <div class="view-controls">
+          <button id="list-view-btn" class="view-btn active">📋 Liste</button>
+          <button id="kanban-view-btn" class="view-btn">📊 Kanban</button>
+        </div>
+        <button id="new-task-btn">Nouvelle tâche</button>
+      </div>
+      <div class="filters">
+        <label>Projet<select id="task-project-filter"></select></label>
+      </div>
+      
+      <!-- Vue Liste (existante) -->
+      <div id="list-view" class="view-container">
+        <div id="task-list" class="list"></div>
+      </div>
+      
+      <!-- Vue Kanban (nouvelle) -->
+      <div id="kanban-view" class="view-container hidden">
+        <div class="kanban-board">
+          <div class="kanban-column" data-status="todo">
+            <div class="kanban-header">
+              <h3>📝 À faire</h3>
+              <span class="task-count" id="todo-count">0</span>
+            </div>
+            <div class="kanban-tasks" id="todo-tasks"></div>
+          </div>
+          
+          <div class="kanban-column" data-status="in_progress">
+            <div class="kanban-header">
+              <h3>⚡ En cours</h3>
+              <span class="task-count" id="in_progress-count">0</span>
+            </div>
+            <div class="kanban-tasks" id="in_progress-tasks"></div>
+          </div>
+          
+          <div class="kanban-column" data-status="done">
+            <div class="kanban-header">
+              <h3>✅ Terminé</h3>
+              <span class="task-count" id="done-count">0</span>
+            </div>
+            <div class="kanban-tasks" id="done-tasks"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h3 id="modal-title"></h3>
+        <button id="modal-close" class="icon">✕</button>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+</body>
+</html>
+
+
